@@ -8,7 +8,7 @@ public static class LocalUi
         var aiCompanion = new AiCompanion();
 
         ConfigureOutput(aiCompanion);
-        
+        ConfigureLog(aiCompanion);
         RunUiLoop(aiCompanion);
         
         Console.WriteLine("Done");
@@ -17,6 +17,16 @@ public static class LocalUi
     private static void ConfigureOutput(AiCompanion aiCompanion)
     {
         aiCompanion.CompanionOutput += Console.WriteLine;
+    }
+
+    private static void ConfigureLog(AiCompanion aiCompanion)
+    {
+        aiCompanion.CompanionLog += (string s) =>
+        {
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine(s);
+            Console.ResetColor();
+        };
     }
 
     private static void RunUiLoop(AiCompanion aiCompanion)
