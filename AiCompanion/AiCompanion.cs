@@ -1,14 +1,31 @@
-﻿namespace AiCompanion;
+﻿using AiCompanion.Logic;
+using AiCompanion.Memory;
+using AiCompanion.Thoughts;
+
+namespace AiCompanion;
 
 public class AiCompanion
 {
-    public event Action<string> CompanionOutput;
+    public event Action<string>? CompanionOutput;
+    public event Action<string>? CompanionLog;
 
-    public bool CompanionInput(string s)
+    internal MemoryBank memoryBank;
+    internal BrainLoop brainLoop;
+    
+    public AiCompanion()
     {
-        if (StringIsAllowed(s))
+        memoryBank = MemoryLoader.LoadFromFile("Add filepath here when functionality is completed.");
+        brainLoop = new BrainLoop(this);
+    }
+    
+    public bool CompanionInput(string inputString)
+    {
+        if (StringIsAllowed(inputString))
         {
-            // Do something
+            CompanionLog.Invoke("User input passed checks.");
+            
+            brainLoop.AddThought(new Hear(this, inputString));
+            
             return true;
         }
 
@@ -18,5 +35,15 @@ public class AiCompanion
     private bool StringIsAllowed(string s)
     {
         return true;
+    }
+
+    internal void SendLog(string s)
+    {
+        CompanionLog?.Invoke(s);
+    }
+
+    internal void SendOutput(string s)
+    {
+        CompanionOutput?.Invoke(s);
     }
 }
