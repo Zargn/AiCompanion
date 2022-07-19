@@ -22,7 +22,7 @@ public class AiCompanion
     {
         if (StringIsAllowed(inputString))
         {
-            CompanionLog.Invoke("User input passed checks.");
+            SendLog("User input passed checks.");
             
             brainLoop.AddThought(new Hear(this, inputString));
             
