@@ -25,6 +25,14 @@ internal class BrainLoop
         thoughtQueueEmpty.Set();
     }
 
+    internal void AddThoughts(IEnumerable<IThought> thoughts)
+    {
+        foreach (var thought in thoughts)
+        {
+            AddThought(thought);
+        }
+    }
+
     private void Loop()
     {
         while (enabled)
