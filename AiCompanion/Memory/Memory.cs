@@ -12,12 +12,15 @@ internal class Memory
         Title = title;
     }
 
-    internal List<Memory> GetAllChildMemories()
+    internal IEnumerable<Memory> GetAllChildMemories()
     {
-        var result = new List<Memory>();
         foreach (var memory in ChildMemories)
         {
-            result.AddRange(memory.ChildMemories);
+            yield return memory;
+            foreach (var childMemory in memory.GetAllChildMemories())
+            {
+                yield return childMemory;
+            }
         }
     }
 }
