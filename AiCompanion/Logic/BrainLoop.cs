@@ -1,16 +1,17 @@
 ﻿using AiCompanion.Interfaces;
+using AiCompanion.Memory;
 
 namespace AiCompanion.Logic;
 
 internal class BrainLoop
 {
-    private Queue<IThought> thoughtQueue = new();
-
+    private readonly Queue<IThought> thoughtQueue = new();
+    private readonly EventWaitHandle thoughtQueueEmpty = new AutoResetEvent(false);
+    private readonly AiCompanion aiCompanion;
+    
     private bool enabled = true;
 
-    private EventWaitHandle thoughtQueueEmpty = new AutoResetEvent(false);
-
-    private AiCompanion aiCompanion;
+    internal ShortTermMemory ShortTermMemory;
     
     public BrainLoop(AiCompanion aiCompanion)
     {
