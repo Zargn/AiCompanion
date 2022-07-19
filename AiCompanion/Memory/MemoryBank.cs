@@ -1,6 +1,6 @@
 ﻿namespace AiCompanion.Memory;
 
-public class MemoryBank
+internal class MemoryBank
 {
-    
+    internal Dictionary<Memory, string> Memories = new Dictionary<Memory, string>();
 }
