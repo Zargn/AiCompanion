@@ -2,5 +2,10 @@
 
 internal class MemoryBank
 {
-    internal Dictionary<Memory, string> Memories = new Dictionary<Memory, string>();
+    internal Dictionary<string, Memory> Memories = new();
+
+    internal IEnumerable<string> GetAllWords()
+    {
+        return Memories.Keys;
+    }
 }
