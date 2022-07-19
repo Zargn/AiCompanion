@@ -6,6 +6,17 @@ MemoryBanks:
 	If the subject is car, we want it the ai to be able to add information about cars when given, and if the user
 	presents similar information, but a bit different, then we want the ai to express doubt and ask if the user is 
 	certain.
+
+	"is a" can be a special word used to link two things together. For example, a user input of "Hello is a greeting"
+	would tell the program to create a new memory bank for "greeting", and add "hello" to the group of "implemnters"
+
+	"has a" or "have a" would be similar but instead of adding the word to the group, it would add it as a criteria
+	for implementers in the group. Kind of like a interface.
+
+	Seeing this, it more feels like experience-memory is actually just a lot of interfaces. When we think of a object,
+	we already have a preset "interface" that defines what we expect that type of oject will have or contain.
+
+	
 	
 Hear thought:
 	We probably want to split up the sentances we hear into individual keywords, and maybe even throw away words with
