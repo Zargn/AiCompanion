@@ -1,0 +1,13 @@
+MemoryBanks:
+	In us humans, it to me feels like our experience-memories are actually just associations of one thing with another.
+	So for example, the word car to us is associated with a mental image of a car. Which we then can link with the
+	word 4 wheels. Or any other car identification wording. So what I think I need to do is to come up with something
+	similar. I need a storage medium representing kind of a mind map. One main subject, and many sub-subjects. 
+	If the subject is car, we want it the ai to be able to add information about cars when given, and if the user
+	presents similar information, but a bit different, then we want the ai to express doubt and ask if the user is 
+	certain.
+	
+Hear thought:
+	We probably want to split up the sentances we hear into individual keywords, and maybe even throw away words with
+	low value.
+	
