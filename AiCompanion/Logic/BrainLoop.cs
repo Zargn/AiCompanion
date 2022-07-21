@@ -12,7 +12,8 @@ internal class BrainLoop
     private bool enabled = true;
 
     internal ShortTermMemory ShortTermMemory;
-    
+    internal event Action? ThoughtAdded;
+
     public BrainLoop(AiCompanion aiCompanion)
     {
         this.aiCompanion = aiCompanion;
@@ -23,6 +24,7 @@ internal class BrainLoop
     {
         thoughtQueue.Enqueue(thought);
         thoughtQueueEmpty.Set();
+        ThoughtAdded?.Invoke();
     }
 
     internal void AddThoughts(IEnumerable<IThought> thoughts)
