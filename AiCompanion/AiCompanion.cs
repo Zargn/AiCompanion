@@ -11,6 +11,10 @@ public class AiCompanion
 
     internal MemoryBank memoryBank;
     internal BrainLoop brainLoop;
+
+    internal int Patience => (Energy + Happiness) / 2;
+    internal int Energy = 100;
+    internal int Happiness = 100;
     
     public AiCompanion()
     {
