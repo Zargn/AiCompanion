@@ -1,26 +1,15 @@
 ﻿namespace AiCompanion.Memory;
 
-internal class Memory
+[Serializable]
+public class Memory
 {
-    internal string Title;
-    internal List<Memory> ChildMemories;
-    internal List<Memory> IsMemories;
-    internal List<Memory> HasMemories;
+    public string Title;
+    public List<string> ChildMemories = new();
+    public List<string> IsMemories = new();
+    public List<string> HasMemories = new();
 
-    internal Memory(string title)
+    public Memory(string title)
     {
         Title = title;
-    }
-
-    internal IEnumerable<Memory> GetAllChildMemories()
-    {
-        foreach (var memory in ChildMemories)
-        {
-            yield return memory;
-            foreach (var childMemory in memory.GetAllChildMemories())
-            {
-                yield return childMemory;
-            }
-        }
     }
 }
