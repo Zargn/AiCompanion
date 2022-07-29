@@ -9,7 +9,7 @@ public class AiCompanion
     public event Action<string>? CompanionOutput;
     public event Action<string>? CompanionLog;
 
-    internal MemoryBank memoryBank;
+    internal MemoryFragmentSystem MemoryFragmentSystem;
     internal BrainLoop brainLoop;
 
     internal int Patience => (Energy + Happiness) / 2;
@@ -18,8 +18,8 @@ public class AiCompanion
     
     public AiCompanion()
     {
-        memoryBank = MemoryLoader.LoadFromFile("Add filepath here when functionality is completed.");
         brainLoop = new BrainLoop(this);
+        MemoryFragmentSystem = new MemoryFragmentSystem("MemoryTest", this);
     }
     
     public bool CompanionInput(string inputString)
