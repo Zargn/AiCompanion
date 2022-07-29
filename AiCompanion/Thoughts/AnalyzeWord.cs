@@ -15,7 +15,7 @@ internal class AnalyzeWord : ThoughtBaseConstructor, IThought
     {
         aiCompanion.SendLog($"Analyzing word: [{word}]");
         
-        if (aiCompanion.memoryBank.Memories.Contains(word))
+        if (aiCompanion.MemoryFragmentSystem.WordIsKnown(word))
         {
             aiCompanion.brainLoop.ShortTermMemory.MemoryReferences.Add(aiCompanion.MemoryFragmentSystem.GetMemoryByTitle(word));
         }
