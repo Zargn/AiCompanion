@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using AiCompanion.Interfaces;
 
 namespace AiCompanion.Memory;
 
@@ -11,10 +12,12 @@ internal class MemoryFragmentSystem
     private readonly string instancePath;
 
     private MemoryBank memoryBank = new();
-    
-    internal MemoryFragmentSystem(string entityName)
+    private AiCompanion aiCompanion;
+
+    internal MemoryFragmentSystem(string entityName, AiCompanion aiCompanion)
     {
         this.entityName = entityName;
+        this.aiCompanion = aiCompanion;
         instancePath = basePath + entityName + "/";
         PopulateMemoryBankFromFiles();
     }
@@ -26,10 +29,19 @@ internal class MemoryFragmentSystem
         File.WriteAllText(path, json);
     }
 
-    internal Memory GetMemoryFromPath(string memoryTitle)
+    internal Memory GetMemoryByTitle(string memoryTitle)
     {
         var pathToFile = instancePath + memoryTitle + ".json";
-        throw new NotImplementedException();
+        try
+        {
+            string json = File.ReadAllText(pathToFile);
+            return JsonSerializer.Deserialize<Memory>(json, serializeAllFields)!;
+        }
+        catch (FileNotFoundException e)
+        {
+            Console.WriteLine(e);
+            throw new Exception("Error: The memory file was not found!");
+        }
     }
 
     private void PopulateMemoryBankFromFiles()
@@ -38,10 +50,14 @@ internal class MemoryFragmentSystem
         // it with.
         if (EnsureMemoryPathExists())
         {
-            var files = Directory.GetFiles(instancePath);
-            foreach (var file in files)
+            var filePaths = Directory.GetFiles(instancePath);
+            foreach (var filePath in filePaths)
             {
-                Console.WriteLine(file);
+                if (Path.GetExtension(filePath) == ".json")
+                {
+                    var memoryName = Path.GetFileNameWithoutExtension(filePath);
+                    memoryBank.Memories.Add(memoryName);
+                }
             }
         }
     }
