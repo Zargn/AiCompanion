@@ -15,15 +15,15 @@ internal class AnalyzeWord : ThoughtBaseConstructor, IThought
     {
         aiCompanion.SendLog($"Analyzing word: [{word}]");
         
-        if (aiCompanion.memoryBank.Memories.ContainsKey(word))
+        if (aiCompanion.memoryBank.Memories.Contains(word))
         {
-            aiCompanion.brainLoop.ShortTermMemory.MemoryReferences.Add(aiCompanion.memoryBank.Memories[word]);
+            aiCompanion.brainLoop.ShortTermMemory.MemoryReferences.Add(aiCompanion.MemoryFragmentSystem.GetMemoryByTitle(word));
         }
         else
         {
             if (TryFindSimilarWords(out var foundWord))
             {
-                aiCompanion.brainLoop.ShortTermMemory.MemoryReferences.Add(aiCompanion.memoryBank.Memories[foundWord]);
+                aiCompanion.brainLoop.ShortTermMemory.MemoryReferences.Add(aiCompanion.MemoryFragmentSystem.GetMemoryByTitle(foundWord));
             }
             else
             {
