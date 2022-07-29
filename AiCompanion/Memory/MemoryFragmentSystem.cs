@@ -44,6 +44,11 @@ internal class MemoryFragmentSystem
         }
     }
 
+    internal bool WordIsKnown(string word)
+    {
+        return memoryBank.Memories.Contains(word);
+    }
+
     private void PopulateMemoryBankFromFiles()
     {
         // If the path doesn't exist, then we do not need to populate the memory-bank as there are nothing to populate 
