@@ -77,7 +77,7 @@ This is where the majority of the time was spent. Because I wanted to have a goo
 	we already have a preset "interface" that defines what we expect that type of oject will have or contain.
 ```
 
-Based on this I created the following data structure.
+Based on this I decided on the following data structure.
 
 ```cs
 public class Memory
@@ -89,14 +89,21 @@ public class Memory
 }
 ```
 
-<details>
-  <summary>Explaination</summary>
-  Each instance of the memory class would contain all the information about one object, and possible connections with other objects.
-  `Title` would be the name of the object.
-  `ChildMemories` would contain all memories that is this object. For example, the object "car" could have a child memory with title "toyota prius".
-  `IsMemories` would in turn contain all memories that this object is. Kind of the reverse of the above example. 
-  `HasMemories` instead contains all things the object has. Things that define it kind of. If we keep using the car as a example, it could here have "wheels".
-</details>
+Each instance of the memory class would contain all the information about one object, and possible connections with other objects.\
+`Title` would be the name of the object.\
+`ChildMemories` would contain all memories that is this object. For example, the object `car` could have a child memory with title `toyota prius`.\
+`IsMemories` would in turn contain all memories that this object is. Kind of the reverse of the above example. \
+`HasMemories` instead contains all things the object has. Things that define it kind of. If we keep using the `car` as a example, it could here have `wheels`.
+
+
+---
+# Development part 1
+
+As I started implementing the Memory class and surrounding systems, I needed to also have some way to handle user input. For this, I used a command based system of `thought` interfaces. The idea was to make all computation done by the ai be done in a brain loop together with a short term memory. (Again, *very* out of scope here.)
+The start of this was to simply make a `hear` thought, that would be created for a users input. This thought in turn would split up the words and call a `analyzeWord` thought. This is kind of where my momentum stopped, because I didn't really want to hard code in certain actions based on specific words. I still kept going a bit but didn't really get much further than this when it comes to the thoughts.
+
+---
+# 
 
 
 
