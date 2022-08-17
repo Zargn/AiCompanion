@@ -130,22 +130,7 @@ Together with a save and loading system I could have a memory struture that not 
 }
 ```
 
-
-I don't know what I expected, but making your own machine learning algorithm is not just a walk in the park, especially when you don't have a set goal. So I ended up spending way to much time planning that feature. I decided on making it a text based ai, that would be able to learn based on user input, and then use that knowledge to match clues with objects. 
-
-
-
-
-
-After finishing the basic interfaces and the ui application I decided to start with the machine learning part. But due to me not having a concrete plan for what the machine learning would actually do, I ended up with a blank canvas. For good, and bad. Good, I could make the goal whatever I wanted. Bad? I wouldn't have a set plan that I could follow, which could cause me to set a goal too big. And that is sadly what happened. Now after it is super clear how many things I did wrong in this stage.
-
-First of all, I didn't have a set plan. I ended up spending quite a lot of time trying to figure out what I want to do. And second, I decided to focus on the machine learning first, and leave the smaller parts for later. This is *very* bad, since I was not focusing on the important core of the project, but instead a side thing that was supposed to be a cool extra on the side.
-
-Sadly though, I didn't realise this at that time, and continued work. I ended up going for a text based machine learning algorithm that I want to be able to learn information, and then guess objects based on what it knows, and what clues the user gives.
-
----
-# Machine learning planning
-
+This is sadly where the story ends for now. I got the saving and loading of these new string based memory objects up and running, and I had begun on the main program. It is not complete, and I have no idea if this is good enough for a passed. There is definitely ideas and plans left that I haven't put in this document, but those can of course not be taken into account if I don't document them. I still like this idea, and really want to continue it someday. Thanks for reading and sorry if it is a bit back and fourth. 
 
 
 
