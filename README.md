@@ -103,8 +103,32 @@ As I started implementing the Memory class and surrounding systems, I needed to 
 The start of this was to simply make a `hear` thought, that would be created for a users input. This thought in turn would split up the words and call a `analyzeWord` thought. This is kind of where my momentum stopped, because I didn't really want to hard code in certain actions based on specific words. I still kept going a bit but didn't really get much further than this when it comes to the thoughts.
 
 ---
-# 
+# A side branch
 
+The original plan was to have the data structure shown above, but it had one flaw. I wanted to store it in RAM, and while not impossible, it would limit what I could do. So I started thinking about a better way to do it. (Realising as I am writing this that this again is just horrible dicipline towards the project goal. If it is not a problem, do NOT waste time fixing it.)
+
+One way would be to store everything on disk. A lot slower yes, but speed is not the important thing here, but rather the capacity and ease of use for me. After some thinking and prototyping, I changed the data structure to this instead:
+
+```cs
+public class Memory
+{
+  public string Title;
+  public List<string> ChildMemories;
+  public List<string> IsMemories;
+  public List<string> HasMemories;
+}
+```
+
+Together with a save and loading system I could have a memory struture that not only has a much higher capacity, but also editable by me outside of the program running due to it being stored in easy to understand json. One example would be something like this:
+
+```json
+{
+	"title":"car",
+	"isMemories":["vehicle","rectangular"],
+	"hasMemories":["wheels","windows","lights","doors","seats"],
+	"childMemories":["volvo v70","tesla model x","toyota prius"]
+}
+```
 
 
 I don't know what I expected, but making your own machine learning algorithm is not just a walk in the park, especially when you don't have a set goal. So I ended up spending way to much time planning that feature. I decided on making it a text based ai, that would be able to learn based on user input, and then use that knowledge to match clues with objects. 
