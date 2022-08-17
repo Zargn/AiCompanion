@@ -46,7 +46,25 @@ Everything after this has been re-written due to me forgetting to commit my chan
 ---
 # Change of scope
 
-After finishing up the interfaces and ui application, I moved on to start on the companion part. I made the base class, connected it up with the ui app, and started thinking about the machine learning part. I don't know what I expected, but making your own machine learning algorithm is not just a walk in the park, especially when you don't have a set goal. So I ended up spending way to much time planning that feature. I decided on making it a text based ai, that would be able to learn based on user input, and then use that knowledge to match clues with objects. 
+After finishing up the interfaces and ui application, I moved on to start on the companion part. I made the base class, connected it up with the ui app, and started thinking about the next step. I could create some basic companion logic, like energy, food, or similar. Not big tasks really. The biggest challenge was of course the machine learning part. I had no plan. I never tried something like it before. So clearly, it would take the most time, so why not start with that?
+
+I started by trying to decide on a goal, and quite quickly came to the conclusion that something with appropriate difficulty would be a text based ai that would learn from user input, and then use the knowledge to try and guess objects based on clues. This is where the project changed scope. I didn't realise it then, but now I can clearly see two large issues with these decisions. First, this machine learning thing is not impossible, but would be quite troublesome in the timeframe I had while also doing the other parts needed. And second, I did things in the completely wrong order. I should not do the hardest thing first, but rather get the easy parts done so I have something in case of the large thing taking too much time.
+
+So basically, the project went from being a companion program, with some machine learning thrown into it. To a machine learning program that might in the end be a part of a ai companion.
+
+---
+# Machine learning plans
+
+Now that I had changed the goal, and knew what I wanted, I could get to work. And the first question of course is, how do I make a program learn?
+
+
+
+
+
+
+I don't know what I expected, but making your own machine learning algorithm is not just a walk in the park, especially when you don't have a set goal. So I ended up spending way to much time planning that feature. I decided on making it a text based ai, that would be able to learn based on user input, and then use that knowledge to match clues with objects. 
+
+
 
 
 
