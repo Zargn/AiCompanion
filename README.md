@@ -1,34 +1,5 @@
-Ai Companion summer project.
-
----
-# The base idea
-
-The original idea for this project was a simple ai companion like the old toys people had back in the day with some homemade machine learning thrown in. 
-But sadly I let it run a bit out of scope, and ended up focusing too much on the machine learning part.
-
-But at least I have made some progress on that, of which I will now explain to you.
-
-The main idea was to make a text based ai that would "understand" and learn based on what the user told them about. I spent most of the time on this project thinking about how to deal with the problem of making the program "learn".
-So I started by trying to figure out how our memory works, how do we learn things?
-
-Now of course I do not have the ability to simulate a brain, but I can cheat. After spending lots of time thinking, I have come to the conclusion that the way we remember things are usually not too far from a class implementing other classes and interfaces.
-Lets say a car. We know what a car is. And we know what it has. So based on that we can create a small memory structure that looks something like this.
-
-```cs
-{
-  string title
-  string[] isMemories
-  string[] hasMemories
-  string[] childMemories
-}
-```
-
-With a system of storing these memory objects and getting them from the long term memory by title, we can have a good way of storing learned information.
-If we go back to the car example, then it could look something like this (in json format)
-
-```json
-{"title":"car","isMemories":["vehicle","rectangular"],"hasMemories":["wheels","windows","lights","doors","seats"],"childMemories":["volvo v70","tesla model x","toyota prius"]}
-```
+# Ai companion. 
+## A uncomplete summer project.
 
 ---
 # The start of the project
