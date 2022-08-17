@@ -38,3 +38,30 @@ Then I created the basic interface owned and implemented by the class library to
 
 The ai part also had one important design principle, and that is to make sure not to do something that will prevent multiple instances of the ai running. (Mainly avoiding statics, and making sure any saved file or similar can be linked to a specific instance.
 Together these things enable me to later create a raspberry pi server that contains a few of these ai's, that can then be reached and interacted with through a desktop or mobile application.
+
+---
+Everything after this has been re-written due to me forgetting to commit my changes, losing more than one hour of documentation. I was really happy with the earlier documentation I did, but I also do not remember how I wrote it. So this should still cover everything, but formatting and writing will be way worse. But it is what it is. Lesson learned, do not write documentation using githubs web editor without commiting every 10 minutes or something. :/
+
+---
+# Change of scope
+
+After finishing the basic interfaces and the ui application I decided to start with the machine learning part. But due to me not having a concrete plan for what the machine learning would actually do, I ended up with a blank canvas. For good, and bad. Good, I could make the goal whatever I wanted. Bad? I wouldn't have a set plan that I could follow, which could cause me to set a goal too big. And that is sadly what happened. Now after it is super clear how many things I did wrong in this stage.
+
+First of all, I didn't have a set plan. I ended up spending quite a lot of time trying to figure out what I want to do. And second, I decided to focus on the machine learning first, and leave the smaller parts for later. This is *very* bad, since I was not focusing on the important core of the project, but instead a side thing that was supposed to be a cool extra on the side.
+
+Sadly though, I didn't realise this at that time, and continued work. I ended up going for a text based machine learning algorithm that I want to be able to learn information, and then guess objects and similar based on what it knows, and what clues the user gives.
+
+---
+# Machine learning planning
+
+
+
+
+
+
+
+
+
+
+
+
