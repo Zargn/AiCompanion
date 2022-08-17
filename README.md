@@ -68,7 +68,7 @@ Each instance of the memory class would contain all the information about one ob
 
 
 ---
-# Development part 1
+# Development
 
 As I started implementing the Memory class and surrounding systems, I needed to also have some way to handle user input. For this, I used a command based system of `thought` interfaces. The idea was to make all computation done by the ai be done in a brain loop together with a short term memory. (Again, *very* out of scope here.)
 The start of this was to simply make a `hear` thought, that would be created for a users input. This thought in turn would split up the words and call a `analyzeWord` thought. This is kind of where my momentum stopped, because I didn't really want to hard code in certain actions based on specific words. I still kept going a bit but didn't really get much further than this when it comes to the thoughts.
