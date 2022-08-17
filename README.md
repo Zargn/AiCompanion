@@ -57,8 +57,46 @@ So basically, the project went from being a companion program, with some machine
 
 Now that I had changed the goal, and knew what I wanted, I could get to work. And the first question of course is, how do I make a program learn?
 
+This is where the majority of the time was spent. Because I wanted to have a good data structure to handle the knowledge. So I started trying to figure out if I could somehow make a data structure that mimics how our brains remember objects. These are some of my notes written about the subject.
+```
+	In us humans, it to me feels like our object-memories are actually just associations of one thing with another.
+	So for example, the word car to us is associated with a mental image of a car. Which we then can link with the
+	word 4 wheels. Or any other car identification wording. So what I think I need to do is to come up with something
+	similar. I need a storage medium representing kind of a mind map. One main subject, and many sub-subjects. 
+	If the subject is car, we want it the ai to be able to add information about cars when given, and if the user
+	presents similar information, but a bit different, then we want the ai to express doubt and ask if the user is 
+	certain.
 
+	"is a" can be a special word used to link two things together. For example, a user input of "Hello is a greeting"
+	would tell the program to create a new memory for "greeting", and add "hello" to the list of "implemnters"
 
+	"has a" or "have a" would be similar but instead of adding the word to the list, it would add it as a criteria
+	for implementers in the list. Kind of like a interface.
+
+	Seeing this, it more feels like object-memory is actually just a lot of interfaces. When we think of a object,
+	we already have a preset "interface" that defines what we expect that type of oject will have or contain.
+```
+
+Based on this I created the following data structure.
+
+```cs
+public class Memory
+{
+  public string Title;
+  public List<Memory> ChildMemories;
+  public List<Memory> IsMemories;
+  public List<Memory> HasMemories;
+}
+```
+
+<details>
+  <summary>Explaination</summary>
+  Each instance of the memory class would contain all the information about one object, and possible connections with other objects.
+  `Title` would be the name of the object.
+  `ChildMemories` would contain all memories that is this object. For example, the object "car" could have a child memory with title "toyota prius".
+  `IsMemories` would in turn contain all memories that this object is. Kind of the reverse of the above example. 
+  `HasMemories` instead contains all things the object has. Things that define it kind of. If we keep using the car as a example, it could here have "wheels".
+</details>
 
 
 
